@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using RepositoryPattern.Interfaces;
 using RepositoryPattern.Model;
 
 namespace RepositoryPattern
@@ -33,6 +34,8 @@ namespace RepositoryPattern
                 config.UseMySQL("server=localhost;database=test;username=root;password=admin@123");
                 
             });
+
+            services.AddScoped<IProduct, ProductImplementation>();
 
         }
 
