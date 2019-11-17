@@ -27,7 +27,7 @@ namespace RepositoryPattern
         // This method gets called by the runtime. Use this method to add services to the container.
         public static void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(x=>x.EnableEndpointRouting=false).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<ProductDbContext>(config =>
             {
                 config.UseMySQL("server=localhost;database=test;username=root;password=admin@123");
