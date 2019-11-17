@@ -10,6 +10,11 @@ namespace RepositoryPattern.Model
     {
         public DbSet<Product> Products { get; set; }
 
+        public ProductDbContext(DbContextOptions options):base(options)
+        {
+
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
