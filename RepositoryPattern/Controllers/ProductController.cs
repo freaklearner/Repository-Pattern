@@ -69,6 +69,19 @@ namespace RepositoryPattern.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest);
             }
         }
+        
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(int Id)
+        {
+            if (Products.Delete(Id))
+            {
+                return StatusCode(StatusCodes.Status200OK);
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status400BadRequest);
+            }
+        }
 
 
 
