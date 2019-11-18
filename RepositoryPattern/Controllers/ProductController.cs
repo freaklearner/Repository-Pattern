@@ -9,6 +9,7 @@ using RepositoryPattern.Model;
 
 namespace RepositoryPattern.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -48,11 +49,25 @@ namespace RepositoryPattern.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Product product)
+        public IActionResult Post([FromBody]Product product)
         {
             Products.Post(product);
             return StatusCode(StatusCodes.Status201Created);
 
+        }
+
+        [HttpPut("{Id}")]
+        public IActionResult Put(int Id,[FromBody] Product product)
+        {
+            if (product!=null && product.Id == Id)
+            {
+                Products.Put(product);
+                return StatusCode(StatusCodes.Status202Accepted, Id);
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status400BadRequest);
+            }
         }
 
 
