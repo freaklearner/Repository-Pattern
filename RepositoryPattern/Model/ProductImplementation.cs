@@ -32,9 +32,10 @@ namespace RepositoryPattern.Model
             context.SaveChanges(true);
         }
 
-        public bool Put(Product product)
+        public void Put(Product product)
         {
-            throw new NotImplementedException();
+            context.Update(product);
+            context.SaveChanges(true);
         }
 
         public bool Delete(int id)
