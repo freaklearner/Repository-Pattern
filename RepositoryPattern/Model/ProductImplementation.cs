@@ -40,7 +40,19 @@ namespace RepositoryPattern.Model
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var product = context.Products.Find(id);
+            if (product != null)
+            {
+                context.Remove(product);
+                context.SaveChanges(true);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+
         }
 
         
