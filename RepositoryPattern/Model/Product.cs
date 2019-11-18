@@ -9,8 +9,9 @@ namespace RepositoryPattern.Model
     public class Product
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Name Can't be null")]
         public string Name { get; set; }
+        [Required(ErrorMessage ="Name Can't be Null")]
         public decimal Price { get; set; }
     }
 }

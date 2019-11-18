@@ -26,9 +26,10 @@ namespace RepositoryPattern.Model
             return product;
         }
 
-        public bool Post(Product product)
+        public void Post(Product product)
         {
-            throw new NotImplementedException();
+            context.Add(product);
+            context.SaveChanges(true);
         }
 
         public bool Put(Product product)

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace RepositoryPattern.Interfaces
 {
-    interface IProduct
+    public interface IProduct
     {
         IEnumerable<Product> Get();
 
         Product Get(int id);
 
-        bool Post(Product product);
+        void Post(Product product);
 
         bool Put(Product product);
 
