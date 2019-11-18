@@ -14,7 +14,7 @@ namespace RepositoryPattern.Interfaces
 
         void Post(Product product);
 
-        bool Put(Product product);
+        void Put(Product product);
 
         bool Delete(int id);
     }

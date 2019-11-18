@@ -11,7 +11,7 @@ namespace RepositoryPattern.Model
         public int Id { get; set; }
         [Required(ErrorMessage ="Name Can't be null")]
         public string Name { get; set; }
-        [Required(ErrorMessage ="Name Can't be Null")]
+        [Required(ErrorMessage ="Price Can't be Null")]
         public decimal Price { get; set; }
     }
 }
